@@ -11,7 +11,22 @@ public class Mover : MonoBehaviour
 
     public float moveSpeed = 1.5f;
 
+    void Start()
+    {
+        PrintInstruction();
+    }
     void Update()
+    {
+        MovePlayer();
+    }
+
+    void PrintInstruction()
+    {
+        Debug.Log("Welcome to the game!");
+        Debug.Log("Move using arrow keys or W-A-S-D keys");
+    }
+
+    void MovePlayer()
     {
         xValue = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         zValue = Input.GetAxis("Vertical") * moveSpeed  * Time.deltaTime;
